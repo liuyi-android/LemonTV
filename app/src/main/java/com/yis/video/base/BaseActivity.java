@@ -20,7 +20,7 @@ import butterknife.Unbinder;
 import me.yokeyword.fragmentation.SupportActivity;
 
 /**
- * Created by yivideo on 2017/8/18.
+ * Created by yis on 2017/8/18.
  */
 public abstract class BaseActivity<T extends BasePresenter> extends SupportActivity {
 
@@ -132,9 +132,10 @@ public abstract class BaseActivity<T extends BasePresenter> extends SupportActiv
                 break;
             case Black:
                 setTheme(R.style.BlackTheme);
+            case White:
+                setTheme(R.style.WhiteTheme);
                 break;
         }
-
     }
 
     /**

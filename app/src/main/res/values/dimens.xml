@@ -1,5 +1,21 @@
 <resources>
 
+    <!-- 通用文字大小 -->
+    <dimen name="text_size_34">34sp</dimen>
+    <dimen name="text_size_28">28sp</dimen>
+    <dimen name="text_size_26">26sp</dimen>
+    <dimen name="text_size_24">24sp</dimen>
+    <dimen name="text_size_22">22sp</dimen>
+    <dimen name="text_size_20">20sp</dimen>
+    <dimen name="text_size_18">18sp</dimen>
+    <dimen name="text_size_16">16sp</dimen>
+    <dimen name="text_size_15">15sp</dimen>
+    <dimen name="text_size_14">14sp</dimen>
+    <dimen name="text_size_12">12sp</dimen>
+    <dimen name="text_size_small">10sp</dimen>
+    <dimen name="text_size_ss">8sp</dimen>
+
+
     <dimen name="s_micro_text_size">8.0sp</dimen>
     <dimen name="micro_text_size">10.0sp</dimen>
     <dimen name="x_micro_text_size">11.0sp</dimen>

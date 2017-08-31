@@ -21,15 +21,12 @@ public class MainActivity extends BaseActivity {
     @BindView(R.id.main_view)
     MainView mainView;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         unbinder = ButterKnife.bind(this);
     }
-
-
 
     @Override
     public void onBackPressed() {

@@ -1,11 +1,15 @@
 package com.yis.video.ui.view;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.support.annotation.IdRes;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.util.AttributeSet;
+import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import com.yis.video.R;
 import com.yis.video.base.RootView;
@@ -30,9 +34,16 @@ import butterknife.BindView;
 
 public class MainView extends RootView<MainContract.Presenter> implements MainContract.View {
 
-    @BindView(R.id.view_pager)
-    UnScrollViewPager viewPager;
-    private MainPagerAdapter mainPagerAdapter;
+//    @BindView(R.id.view_pager)
+//    UnScrollViewPager viewPager;
+//    private MainPagerAdapter mainPagerAdapter;
+
+    @BindView(R.id.fl_content)
+    FrameLayout flContent;
+    private List<Fragment> fragments;
+    private Fragment fragment;
+    private FragmentTransaction ft;
+    private int currentTab; // 当前Tab页面索引
 
     @BindView(R.id.rg_tab)
     RadioGroup rgTab;
@@ -61,7 +72,7 @@ public class MainView extends RootView<MainContract.Presenter> implements MainCo
     @Override
     protected void initView() {
 
-        List<Fragment> fragments = new ArrayList<>();
+        fragments = new ArrayList<>();
         Fragment indexFragment = new IndexFragment();
         Fragment hotFragment = new HotFragment();
         Fragment zhiboFragment = new ZhiboFragment();
@@ -70,9 +81,12 @@ public class MainView extends RootView<MainContract.Presenter> implements MainCo
         fragments.add(hotFragment);
         fragments.add(zhiboFragment);
         fragments.add(userFragment);
-        mainPagerAdapter = new MainPagerAdapter(((MainActivity) mContext).getSupportFragmentManager(), fragments);
-        viewPager.setAdapter(mainPagerAdapter);
-        viewPager.setOffscreenPageLimit(fragments.size());
+
+        showFragment(0);
+
+//        mainPagerAdapter = new MainPagerAdapter(((MainActivity) mContext).getSupportFragmentManager(), fragments);
+//        viewPager.setAdapter(mainPagerAdapter);
+//        viewPager.setOffscreenPageLimit(fragments.size());
     }
 
     @Override
@@ -87,16 +101,20 @@ public class MainView extends RootView<MainContract.Presenter> implements MainCo
             public void onCheckedChanged(RadioGroup radioGroup, @IdRes int i) {
                 switch (i) {
                     case R.id.rb_index:
-                        viewPager.setCurrentItem(0, false);
+                        showFragment(0);
+//                        viewPager.setCurrentItem(0, false);
                         break;
                     case R.id.rb_hot:
-                        viewPager.setCurrentItem(1, false);
+                        showFragment(1);
+//                        viewPager.setCurrentItem(1, false);
                         break;
                     case R.id.rb_zhibo:
-                        viewPager.setCurrentItem(2, false);
+                        showFragment(2);
+//                        viewPager.setCurrentItem(2, false);
                         break;
                     case R.id.rb_user:
-                        viewPager.setCurrentItem(3, false);
+                        showFragment(3);
+//                        viewPager.setCurrentItem(3, false);
                         break;
                 }
             }
@@ -105,7 +123,42 @@ public class MainView extends RootView<MainContract.Presenter> implements MainCo
 
     @Override
     public void showError(String msg) {
+    }
 
+    /**
+     * 切换底部菜单栏
+     *
+     * @param idx 当前位置
+     */
+    public void showFragment(int idx) {
+        for (int i = 0; i < fragments.size(); i++) {
+            fragment = fragments.get(i);
+            ft = ((MainActivity) mContext).getSupportFragmentManager().beginTransaction();
+
+            getCurrentFragment().onPause(); // 暂停当前tab
+            if (idx == i) {
+                if (fragment.isAdded()) {
+                    fragment.onResume(); // 启动目标tab的onResume()
+                } else {
+                    ft.add(R.id.fl_content, fragment);
+                }
+                ft.show(fragment);
+            } else {
+                ft.hide(fragment);
+            }
+
+            ft.commit();
+            currentTab = idx; // 更新目标tab为当前tab
+        }
+    }
+
+    /**
+     * 获取当前Fragment
+     *
+     * @return
+     */
+    public Fragment getCurrentFragment() {
+        return fragments.get(currentTab);
     }
 
 }

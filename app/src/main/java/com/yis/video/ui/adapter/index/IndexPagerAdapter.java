@@ -1,4 +1,4 @@
-package com.yis.video.ui.adapter;
+package com.yis.video.ui.adapter.index;
 
 import android.content.Context;
 import android.view.View;

@@ -4,12 +4,17 @@
     android:layout_height="match_parent"
     android:background="@android:color/white">
 
-    <com.yis.video.widget.UnScrollViewPager
-        android:id="@+id/view_pager"
+    <!--<com.yis.video.widget.UnScrollViewPager-->
+    <!--android:id="@+id/view_pager"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="@android:color/transparent"-->
+    <!--android:paddingBottom="40dp" />-->
+
+    <FrameLayout
+        android:id="@+id/fl_content"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/transparent"
-        android:paddingBottom="40dp" />
+        android:layout_height="match_parent" />
 
     <RadioGroup
         android:id="@+id/rg_tab"

@@ -153,6 +153,19 @@
         <item name="card_background">@mipmap/card_bg_def</item>
     </style>
 
+    <!--orange-->
+    <style name="WhiteTheme" parent="CustomTransparent">
+        <item name="colorPrimary">@android:color/white</item>
+        <item name="colorPrimaryDark">@android:color/white</item>
+        <item name="colorAccent">@android:color/white</item>
+        <item name="colorPrimaryLight">@android:color/white</item>
+        <item name="md_title_color">@color/white</item>
+        <item name="menuBackground">@drawable/orange_background</item>
+        <item name="background">@mipmap/bg_blue</item>
+        <item name="mine_background">@mipmap/my_bg_colorful</item>
+        <item name="card_background">@mipmap/card_bg_def</item>
+    </style>
+
 
     <!--indigo-->
     <style name="IndigoTheme" parent="CustomTransparent">
@@ -268,6 +281,11 @@
         <item name="android:layout_margin">2dp</item>
         <item name="android:drawablePadding">0dp</item>
         <item name="android:textColor">@color/tab_selector</item>
+    </style>
+
+    <!--修改tablayout字体大小-->
+    <style name="MyTabLayoutTextAppearanceInverse" parent="TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">
+        <item name="android:textSize">@dimen/text_size_16</item>
     </style>
 
 </resources>
