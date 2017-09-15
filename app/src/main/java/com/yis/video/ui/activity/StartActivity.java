@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import com.yis.video.R;
 import com.yis.video.base.BaseActivity;
-import com.yis.video.presenter.StartPresenter;
+import com.yis.video.ui.presenter.StartPresenter;
 import com.yis.video.ui.view.StartView;
 
 import butterknife.BindView;

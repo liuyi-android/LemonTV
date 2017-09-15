@@ -1,9 +1,9 @@
-package com.yis.video.presenter.index;
+package com.yis.video.ui.presenter.index;
 
 import android.support.annotation.NonNull;
 
 import com.yis.video.base.RxPresenter;
-import com.yis.video.presenter.contract.index.IndexContract;
+import com.yis.video.ui.presenter.contract.index.IndexContract;
 import com.yis.video.utils.Preconditions;
 
 import java.util.ArrayList;

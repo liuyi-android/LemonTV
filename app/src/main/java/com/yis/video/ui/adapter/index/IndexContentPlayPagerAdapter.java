@@ -16,12 +16,12 @@ import java.util.List;
  * Created by yivideo on 2017/8/23.
  */
 
-public class IndexPagerAdapter extends StaticPagerAdapter {
+public class IndexContentPlayPagerAdapter extends StaticPagerAdapter {
 
     private Context context;
     private List<String> list;
 
-    public IndexPagerAdapter(Context context, List<String> list) {
+    public IndexContentPlayPagerAdapter(Context context, List<String> list) {
         this.context = context;
         this.list = list;
     }

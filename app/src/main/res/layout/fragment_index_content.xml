@@ -4,11 +4,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tv_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="30sp" />
+    <com.yis.video.ui.view.index.IndexContentView
+        android:id="@+id/index_content_view"
+        style="@style/both_match_style" />
 
 </LinearLayout>

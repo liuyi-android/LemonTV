@@ -1,4 +1,4 @@
-package com.yis.video.ui.adapter;
+package com.yis.video.ui.adapter.index;
 
 import android.content.Context;
 import android.view.ViewGroup;
@@ -11,9 +11,9 @@ import com.yis.video.ui.adapter.viewholder.MainViewHolder;
  * Created by sunny on 2017/8/23.
  */
 
-public class MainRecycleAdapter extends RecyclerArrayAdapter<String> {
+public class IndexContentVideoRecycleAdapter extends RecyclerArrayAdapter<String> {
 
-    public MainRecycleAdapter(Context context) {
+    public IndexContentVideoRecycleAdapter(Context context) {
         super(context);
     }
 

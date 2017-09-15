@@ -1,19 +1,9 @@
 package com.yis.video.ui.fragment.index;
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-
 import com.yis.video.R;
 import com.yis.video.base.BaseFragment;
-import com.yis.video.utils.KL;
-
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import com.yis.video.ui.presenter.index.IndexContentPresenter;
+import com.yis.video.ui.view.index.IndexContentView;
 
 import butterknife.BindView;
 
@@ -23,8 +13,9 @@ import butterknife.BindView;
  */
 public class IndexContentFragment extends BaseFragment {
 
-    @BindView(R.id.tv_name)
-    TextView tvName;
+    @BindView(R.id.index_content_view)
+    IndexContentView indexContentView;
+
 
     @Override
     protected int getLayout() {
@@ -32,13 +23,34 @@ public class IndexContentFragment extends BaseFragment {
     }
 
     @Override
-    protected void lazyFetchData() {
-        tvName.setText("首页& 当前时间是：" + transferLongToDate("MM/dd/yyyy HH:mm:ss", System.currentTimeMillis()));
+    protected void initView() {
+        mPresenter = new IndexContentPresenter(indexContentView);
+        ((IndexContentPresenter) mPresenter).getData();
     }
 
-    public String transferLongToDate(String dateFormat, Long millSec) {
-        SimpleDateFormat sdf = new SimpleDateFormat(dateFormat);
-        Date date = new Date(millSec);
-        return sdf.format(date);
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        if (isVisibleToUser) {
+            if (indexContentView != null) {
+                indexContentView.stopBanner(false);
+            }
+        } else {
+            if (indexContentView != null) {
+                indexContentView.stopBanner(true);
+            }
+        }
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        indexContentView.stopBanner(false);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        indexContentView.stopBanner(true);
+    }
+
 }

@@ -9,9 +9,9 @@ import com.google.common.base.Preconditions;
 import com.yis.video.R;
 import com.yis.video.base.RootView;
 import com.yis.video.component.ImageLoader;
-import com.yis.video.presenter.contract.StartContract;
 import com.yis.video.ui.activity.MainActivity;
 import com.yis.video.ui.activity.StartActivity;
+import com.yis.video.ui.presenter.contract.StartContract;
 
 import butterknife.BindView;
 

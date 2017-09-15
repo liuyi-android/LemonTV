@@ -36,7 +36,6 @@ public class App extends Application {
                 AppCompatDelegate.MODE_NIGHT_NO);
     }
 
-
     @Override
     public void onCreate() {
         super.onCreate();

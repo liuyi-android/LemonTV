@@ -13,13 +13,13 @@ import android.widget.TextView;
 
 import com.yis.video.R;
 import com.yis.video.base.RootView;
-import com.yis.video.presenter.contract.MainContract;
 import com.yis.video.ui.activity.MainActivity;
 import com.yis.video.ui.adapter.MainPagerAdapter;
 import com.yis.video.ui.fragment.HotFragment;
 import com.yis.video.ui.fragment.IndexFragment;
 import com.yis.video.ui.fragment.UserFragment;
 import com.yis.video.ui.fragment.ZhiboFragment;
+import com.yis.video.ui.presenter.contract.MainContract;
 import com.yis.video.utils.Preconditions;
 import com.yis.video.widget.UnScrollViewPager;
 

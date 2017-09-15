@@ -1,9 +1,9 @@
-package com.yis.video.presenter;
+package com.yis.video.ui.presenter;
 
 import android.support.annotation.NonNull;
 
 import com.yis.video.base.RxPresenter;
-import com.yis.video.presenter.contract.StartContract;
+import com.yis.video.ui.presenter.contract.StartContract;
 import com.yis.video.utils.Preconditions;
 import com.yis.video.utils.RxUtil;
 

@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 
 import com.yis.video.R;
 import com.yis.video.base.BaseFragment;
-import com.yis.video.presenter.index.IndexPersenter;
+import com.yis.video.ui.presenter.index.IndexPersenter;
 import com.yis.video.ui.view.index.IndexView;
 
 import butterknife.BindView;
@@ -25,12 +25,8 @@ public class IndexFragment extends BaseFragment {
     }
 
     @Override
-    protected void initView(LayoutInflater inflater) {
+    protected void initView() {
         mPresenter = new IndexPersenter(indexView);
-    }
-
-    public FragmentManager ss() {
-        return getChildFragmentManager();
     }
 
     @Override
@@ -38,15 +34,5 @@ public class IndexFragment extends BaseFragment {
         ((IndexPersenter) mPresenter).getData();
     }
 
-//    @Override
-//    public void onResume() {
-//        super.onResume();
-//        indexView.stopBanner(false);
-//    }
-//
-//    @Override
-//    public void onPause() {
-//        super.onPause();
-//        indexView.stopBanner(true);
-//    }
+
 }

@@ -64,7 +64,7 @@ public abstract class BaseFragment<T extends BasePresenter> extends SupportFragm
             parent.removeView(rootView);
         }
         unbinder = ButterKnife.bind(this, rootView);
-        initView(inflater);
+        initView();
         EventBus.getDefault().register(this);
         setTitleHeight(rootView);
         return rootView;
@@ -164,7 +164,7 @@ public abstract class BaseFragment<T extends BasePresenter> extends SupportFragm
 
     protected abstract int getLayout();
 
-    protected void initView(LayoutInflater inflater) {
+    protected void initView() {
     }
 
     protected void initEvent() {

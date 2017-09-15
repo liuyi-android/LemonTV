@@ -9,7 +9,7 @@
     <com.yis.video.widget.RollPagerView
         android:id="@+id/roll_pager_view"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="260dp"
         app:rollviewpager_play_delay="2000" />
 
 

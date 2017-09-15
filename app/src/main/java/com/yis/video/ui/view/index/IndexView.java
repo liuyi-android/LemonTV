@@ -1,34 +1,19 @@
 package com.yis.video.ui.view.index;
 
 import android.content.Context;
-import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.AttributeSet;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
-import com.jude.easyrecyclerview.EasyRecyclerView;
-import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
-import com.jude.easyrecyclerview.decoration.SpaceDecoration;
-import com.jude.rollviewpager.hintview.IconHintView;
 import com.yis.video.R;
 import com.yis.video.base.RootView;
-import com.yis.video.presenter.contract.index.IndexContract;
 import com.yis.video.ui.activity.MainActivity;
-import com.yis.video.ui.adapter.MainRecycleAdapter;
 import com.yis.video.ui.adapter.index.IndexContentPagerAdapter;
-import com.yis.video.ui.adapter.index.IndexPagerAdapter;
-import com.yis.video.ui.fragment.IndexFragment;
 import com.yis.video.ui.fragment.index.IndexContentFragment;
+import com.yis.video.ui.presenter.contract.index.IndexContract;
 import com.yis.video.utils.Preconditions;
-import com.yis.video.utils.ScreenUtil;
-import com.yis.video.widget.RollPagerView;
 
 import org.simple.eventbus.EventBus;
 
@@ -51,9 +36,6 @@ public class IndexView extends RootView<IndexContract.Persenter> implements Inde
     IndexContentPagerAdapter contentPagerAdapter;
 
 
-//    @BindView(R.id.recycler_view)
-//    EasyRecyclerView recyclerView;
-//
 //    RollPagerView rollPagerView;
 //    View headerView;
 //    MainRecycleAdapter adapter;
@@ -167,7 +149,7 @@ public class IndexView extends RootView<IndexContract.Persenter> implements Inde
 //                    public View onCreateView(ViewGroup parent) {
 //                        rollPagerView.setHintView(new IconHintView(getContext(), R.mipmap.ic_page_indicator_focused, R.mipmap.ic_page_indicator, ScreenUtil.dip2px(getContext(), 10)));
 //                        rollPagerView.setHintPadding(0, 0, 0, ScreenUtil.dip2px(getContext(), 8));
-//                        rollPagerView.setAdapter(new IndexPagerAdapter(getContext(), img));
+//                        rollPagerView.setAdapter(new IndexContentPlayPagerAdapter(getContext(), img));
 //                        return headerView;
 //                    }
 //

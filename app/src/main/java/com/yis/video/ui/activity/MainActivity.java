@@ -14,7 +14,6 @@ import butterknife.ButterKnife;
 public class MainActivity extends BaseActivity {
 
     public static final String Set_Theme_Color = "Set_Theme_Color";
-    public final static String Banner_Stop = "Banner_Stop";
 
     private Long firstTime = 0L;
 

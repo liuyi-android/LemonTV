@@ -1,4 +1,4 @@
-package com.yis.video.presenter.contract.index;
+package com.yis.video.ui.presenter.contract.index;
 
 import com.yis.video.base.BasePresenter;
 import com.yis.video.base.BaseView;
