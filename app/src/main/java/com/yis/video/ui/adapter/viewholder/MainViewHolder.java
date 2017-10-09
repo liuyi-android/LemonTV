@@ -1,12 +1,18 @@
 package com.yis.video.ui.adapter.viewholder;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.os.Handler;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.jude.easyrecyclerview.adapter.BaseViewHolder;
 import com.yis.video.R;
 import com.yis.video.component.ImageLoader;
+import com.yis.video.ui.activity.StartActivity;
+import com.yis.video.ui.activity.index.IndexVideoShowActivity;
+import com.yis.video.utils.EventUtil;
 
 /**
  * Created by yivideo on 2017/8/23.
@@ -24,11 +30,11 @@ public class MainViewHolder extends BaseViewHolder<String> {
     @Override
     public void setData(String data) {
         super.setData(data);
-        int width =  ((Activity)getContext()).getWindowManager().getDefaultDisplay().getWidth();
+        int width = ((Activity) getContext()).getWindowManager().getDefaultDisplay().getWidth();
         ViewGroup.LayoutParams params = ivHead.getLayoutParams();
         //设置图片的相对于屏幕的宽高比
-        params.width = width/2;
-        params.height =  (int) (200 + Math.random() * 400) ;
+        params.width = width / 2;
+        params.height = (int) (200 + Math.random() * 400);
         ivHead.setLayoutParams(params);
 
         ImageLoader.load(getContext(), data, ivHead);

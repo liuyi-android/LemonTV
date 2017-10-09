@@ -3,6 +3,7 @@ package com.yis.video.app;
 
 import android.app.Activity;
 import android.app.Application;
+import android.os.Handler;
 import android.support.v7.app.AppCompatDelegate;
 
 import com.yis.video.di.component.DaggerAppComponent;
@@ -10,7 +11,9 @@ import com.yis.video.di.component.AppComponent;
 import com.yis.video.di.module.AppModule;
 import com.yis.video.di.module.HttpModule;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 import io.realm.Realm;
@@ -24,8 +27,22 @@ import io.realm.Realm;
  * @time: 2016/9/13 10:53
  ******************************************/
 public class App extends Application {
+
     private static App instance;
     private Set<Activity> allActivities;
+
+    public static Map<Integer,Handler> sHandlerMap=new HashMap<>();
+    public static Map<Integer,Runnable> sRunnableMap=new HashMap<>();
+
+    public static void stop() {
+        for (int i=0;i<App.sHandlerMap.size();i++){
+            if (App.sHandlerMap.get(i)!=null){
+                //NewsApplication.sHandlerMap.get(i).removeCallbacksAndMessages(null);
+                App.sHandlerMap.get(i).removeCallbacks(App.sRunnableMap.get(i));
+            }
+        }
+    }
+
 
     public static App getInstance() {
         return instance;

@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import com.jude.easyrecyclerview.EasyRecyclerView;
 import com.jude.easyrecyclerview.adapter.RecyclerArrayAdapter;
 import com.jude.easyrecyclerview.decoration.SpaceDecoration;
+import com.jude.rollviewpager.OnItemClickListener;
 import com.jude.rollviewpager.hintview.IconHintView;
 import com.yis.video.R;
 import com.yis.video.base.RootView;
@@ -17,6 +18,7 @@ import com.yis.video.constant.EventBusConstant;
 import com.yis.video.ui.adapter.index.IndexContentPlayPagerAdapter;
 import com.yis.video.ui.adapter.index.IndexContentVideoRecycleAdapter;
 import com.yis.video.ui.presenter.contract.index.IndexContentContract;
+import com.yis.video.utils.EventUtil;
 import com.yis.video.utils.Preconditions;
 import com.yis.video.utils.ScreenUtil;
 import com.yis.video.widget.RollPagerView;
@@ -78,6 +80,8 @@ public class IndexContentView extends RootView<IndexContentContract.Presenter> i
 //        itemDecoration.setPaddingHeaderFooter(false);//是否对Header于Footer有效,默认false.
 
         recyclerView.addItemDecoration(itemDecoration);
+
+
     }
 
     @Override
@@ -113,6 +117,7 @@ public class IndexContentView extends RootView<IndexContentContract.Presenter> i
                     rollPagerView.setHintView(new IconHintView(getContext(), R.mipmap.ic_page_indicator_focused, R.mipmap.ic_page_indicator, ScreenUtil.dip2px(getContext(), 10)));
                     rollPagerView.setHintPadding(0, 0, 0, ScreenUtil.dip2px(getContext(), 8));
                     rollPagerView.setAdapter(new IndexContentPlayPagerAdapter(getContext(), playImgs));
+
                     return headView;
                 }
 
